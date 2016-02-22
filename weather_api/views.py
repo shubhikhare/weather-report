@@ -28,7 +28,7 @@ def signup(request):
 
 	else:
 		return HttpResponseRedirect("/")
-		
+
 def login(request):
 	if not request.user.is_authenticated():
 		if request.method == "POST":
@@ -38,7 +38,7 @@ def login(request):
 			if user is not None:
 				if user.is_active:
 					auth.login(request,user)
-					return HttpResponseRedirect("/profile")
+					return HttpResponseRedirect("/weather")
 			else:
 				return render(request,"login.html",{"error":1})
 
@@ -46,3 +46,6 @@ def login(request):
 			return render(request,"login.html")
 	else:
 		return HttpResponseRedirect("/login")
+
+def  weather(request):
+	return render(request,"weather.html")

@@ -1,22 +1,17 @@
 <html>
-<head>
-	<title> </title>
-</head>
-<body background="/static/images/weather-8.jpg">
-	<ul>
-		{% if user %}
-		<li><a href="/weather_update"> Weather Update </a></li>
-		<li><a href="/logout"> Logout </a></li>
-		{% endif %}
-	</ul>
-	<h1><b><center>WEATHER REPORT</center></b></h1>
-	<form method="POST">
-		{% csrf_token %}
-		<label><b>City Name:</b></label>
-		<input type="text" name="city" placeholder="City Name"><br><br>
-		<label><b>Country:</b></label>
-		<input type="text" name="country" placeholder="Country"><br><br>
-		<input type="submit" value="OK">
-	</form>
-</body>
-</html>
+	<head>
+			<title>Sign In</title>
+		</head>
+	<body style="text-align:center">
+		<h1>Login!!</h1>
+		<form method="POST">
+			{% csrf_token %}
+			<label><b>Username:</b></label>
+			<input type="text" name="username" placeholder="Username"><br><br>
+			<label><b>Password:</b></label>
+			<input type="password" name="password" placeholder="******"><br><br>
+			<input type="submit" value="Ok">
+		</form>
+	</body>
+	</html>
+	
