@@ -48,4 +48,10 @@ def login(request):
 		return HttpResponseRedirect("/login")
 
 def  weather(request):
-	return render(request,"weather.html")
+	return render(request, "weather.html")
+
+def logout(request):
+	return render(request, "index.html")
+
+def weather_update(request):
+	return render(request, "weather.html")
