@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title> Weather | Home</title>
+</head>
+<body background="/static/images/weather-8.jpg">
+	<ul>
+		{% if user %}
+		<li><a href="/weather_update"> Weather Update </a></li>
+		<li><a href="/logout"> Logout </a></li>
+		<li><a href="/register"> Signup </a></li>
+		<li><a href="/login"> Login </a></li>
+		{% endif %}
+	</ul>
+	<h1><b><center>WEATHER REPORT</center></b></h1>
+</body>
+</html>
