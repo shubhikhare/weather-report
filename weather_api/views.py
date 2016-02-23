@@ -37,21 +37,20 @@ def login(request):
 			user=auth.authenticate(username=username,password=password)
 			if user is not None:
 				if user.is_active:
+					print "loggedin"
 					auth.login(request,user)
 					return HttpResponseRedirect("/weather")
 			else:
-				return render(request,"register.html",{"error":1})
+				print "none"
+				return HttpResponseRedirect("/register")
 
 		elif request.method == "GET":
 			return render(request,"login.html")
 	else:
-		return HttpResponseRedirect("/login")
+		return HttpResponseRedirect("/home")
 
 def  weather(request):
 	return render(request, "weather.html")
 
 def logout(request):
 	return render(request, "index.html")
-
-def weather_update(request):
-	return render(request, "weather.html")
