@@ -30,7 +30,7 @@ def signup(request):
 		return HttpResponseRedirect("/")
 
 def login(request):
-	if not request.user.is_authenticated():
+	if request.user.is_authenticated():
 		if request.method == "POST":
 			username=request.POST['username']
 			password=request.POST['password']
@@ -40,7 +40,7 @@ def login(request):
 					auth.login(request,user)
 					return HttpResponseRedirect("/weather")
 			else:
-				return render(request,"login.html",{"error":1})
+				return render(request,"register.html",{"error":1})
 
 		elif request.method == "GET":
 			return render(request,"login.html")
