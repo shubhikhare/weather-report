@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Weather Results</title>
+	</head>
+	<body background="/static/images/weather-8.jpg">
+		<ul>
+		{% if user %}
+		<li><a href="/weather"> Weather Update</a></li>
+		<li><a href="/logout"> Logout </a></li>
+		{% endif %}
+	</ul>
+	<h1><b><center>WEATHER REPORT</center></b></h1>
+		<h2><center> City : </center></h2>
+			<center>{{city}}</center>
+		<h2><center> Temperature : </center></h2>
+			<center>{{temp}}</center>
+	</body>
+</html>
